@@ -8,7 +8,6 @@ module pl.strefakursow.spring_javafx {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
 
     opens pl.strefakursow.spring_javafx to javafx.fxml;
     exports pl.strefakursow.spring_javafx;
