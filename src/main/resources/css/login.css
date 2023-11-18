@@ -1,0 +1,29 @@
+.exit-button {
+    -fx-background-color: -fx-primary-red;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+}
+
+.exit-button:hover {
+    -fx-background-color: -fx-secondary-red;
+}
+
+.title {
+    -fx-font-size: 40px;
+}
+
+.background {
+    -fx-background-color: -fx-primary-background;
+}
+
+.login-button {
+    -fx-background-color: -fx-primary-background;
+    -fx-border-color: black;
+    -fx-background-radius: 0px;
+}
+
+.login-button:hover {
+    -fx-background-color: -fx-secondary-background;
+}
