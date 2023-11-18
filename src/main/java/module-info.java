@@ -10,4 +10,6 @@ module pl.strefakursow.spring_javafx {
     exports pl.strefakursow.spring_javafx;
     exports pl.strefakursow.spring_javafx.controller;
     opens pl.strefakursow.spring_javafx.controller to javafx.fxml;
+    exports pl.strefakursow.spring_javafx.dto;
+    opens pl.strefakursow.spring_javafx.dto to javafx.fxml;
 }

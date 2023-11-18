@@ -25,6 +25,8 @@ public class AuthenticatorImplementation implements Authenticator {
     }
 
     private void processAuthentication(OperatorCredentialsDto operatorCredentialsDto, AuthenticationResultHandler authenticationResultHandler) {
+
+
         ResponseEntity<OperatorAuthenticationResultDto> responseEntity = restTemplate.postForEntity(AUTHENTICATION_URL, operatorCredentialsDto, OperatorAuthenticationResultDto.class);
         authenticationResultHandler.handle(responseEntity.getBody());
     }
