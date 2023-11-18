@@ -2,21 +2,28 @@ package pl.strefakursow.spring_javafx.controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import pl.strefakursow.spring_javafx.Main;
 import pl.strefakursow.spring_javafx.dto.OperatorCredentialsDto;
 import pl.strefakursow.spring_javafx.factory.PopupFactory;
 import pl.strefakursow.spring_javafx.rest.Authenticator;
 import pl.strefakursow.spring_javafx.rest.AuthenticatorImplementation;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    public static final String APP_FXML = "app.fxml";
+    public static final String APP_TITTLE = "MS_System";
     private PopupFactory popupFactory;
     private Authenticator authenticator;
 
@@ -65,9 +72,33 @@ public class LoginController implements Initializable {
 
         authenticator.authenticate(dto, authenticationResult -> {
             Platform.runLater(() -> waitingPopup.close());
-            System.out.println("Authentication result: " + authenticationResult.isAuthenticated() + "Authentication result: " + authenticationResult.toString());
+            if(authenticationResult.isAuthenticated()) {
+                openAppAndCloseLoginStage();
+            }
+            else showIncorrectCredentialsMessage();
         });
 
+
+    }
+
+    private void showIncorrectCredentialsMessage() {
+//        TODO implement method
+    }
+
+    private void openAppAndCloseLoginStage() {
+        Stage appStage = new Stage();
+        Parent appRoot = null;
+        try {
+            //metoda getClass() nie działa
+            appRoot = FXMLLoader.load(Main.class.getResource(APP_FXML));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Scene scene = new Scene(appRoot, 1200, 800);
+        appStage.setTitle(APP_TITTLE);
+        appStage.setScene(scene);
+        appStage.show();
+        getStage().close();
 
     }
 

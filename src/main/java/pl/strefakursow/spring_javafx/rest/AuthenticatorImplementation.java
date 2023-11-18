@@ -1,5 +1,6 @@
 package pl.strefakursow.spring_javafx.rest;
 
+import javafx.application.Platform;
 import org.springframework.http.ResponseEntity;
 import pl.strefakursow.spring_javafx.dto.OperatorAuthenticationResultDto;
 import pl.strefakursow.spring_javafx.dto.OperatorCredentialsDto;
@@ -17,7 +18,11 @@ public class AuthenticatorImplementation implements Authenticator {
 
     @Override
     public void authenticate(OperatorCredentialsDto operatorCredentialsDto, AuthenticationResultHandler authenticationResultHandler) {
-        Runnable authenticationTask = () -> processAuthentication(operatorCredentialsDto, authenticationResultHandler);
+        Runnable authenticationTask = () -> {
+            Platform.runLater(() -> {
+                processAuthentication(operatorCredentialsDto, authenticationResultHandler);
+            });
+        };
         Thread authenticationThread = new Thread(authenticationTask);
         authenticationThread.setDaemon(true);
         authenticationThread.start();
@@ -25,9 +30,14 @@ public class AuthenticatorImplementation implements Authenticator {
     }
 
     private void processAuthentication(OperatorCredentialsDto operatorCredentialsDto, AuthenticationResultHandler authenticationResultHandler) {
+//        ResponseEntity<OperatorAuthenticationResultDto> responseEntity = restTemplate.postForEntity(AUTHENTICATION_URL, operatorCredentialsDto, OperatorAuthenticationResultDto.class);
+//        authenticationResultHandler.handle(responseEntity.getBody());
 
-
-        ResponseEntity<OperatorAuthenticationResultDto> responseEntity = restTemplate.postForEntity(AUTHENTICATION_URL, operatorCredentialsDto, OperatorAuthenticationResultDto.class);
-        authenticationResultHandler.handle(responseEntity.getBody());
+        OperatorAuthenticationResultDto dto = new OperatorAuthenticationResultDto();
+        dto.setIdOperator(1L);
+        dto.setFirstName("Maciej");
+        dto.setLastName("Starostecki");
+        dto.setAuthenticated(true);
+        authenticationResultHandler.handle(dto);
     }
 }

@@ -4,19 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="Poprawka, która wynikała z niespójności plików">
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="Odbieranie danych z serwera i agregacja pracowników">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/EmployeeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/EmployeeTableModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/app.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/OperatorAuthenticationResultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/OperatorAuthenticationResultDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/OperatorCredentialsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/OperatorCredentialsDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticationResultHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticationResultHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/Authenticator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticatorImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticatorImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,25 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;I:/Java/IdeaProjects/StrefaKursów/Spring_JavaFX_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX/src/main/resources/pl/strefakursow/spring_javafx/controller",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx\controller" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\image" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx\controller" />
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx" />
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="pl.strefakursow.spring_javafx" />
@@ -133,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Poprawka, która wynikała z niespójności plików" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poprawka, która wynikała z niespójności plików" />
+    <MESSAGE value="Odbieranie danych z serwera i agregacja pracowników" />
+    <option name="LAST_COMMIT_MESSAGE" value="Odbieranie danych z serwera i agregacja pracowników" />
   </component>
 </project>
