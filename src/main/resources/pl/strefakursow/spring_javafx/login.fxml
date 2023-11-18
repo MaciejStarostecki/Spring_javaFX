@@ -1,16 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.strefakursow.spring_javafx.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.strefakursow.spring_javafx.controller.LoginController">
+  <children>
+    <ImageView fitHeight="184.0" fitWidth="189.0" layoutX="55.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../image/Logo.png" />
+      </image>
+    </ImageView>
+    <SplitPane layoutX="250.0" prefHeight="400.0" prefWidth="350.0" styleClass="background">
+      <items>
+        <VBox alignment="CENTER" prefHeight="327.0" prefWidth="347.0" spacing="20.0">
+          <children>
+            <Label styleClass="title" text="MS Systems" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Zaloguj się">
+              <font>
+                <Font name="System Bold" size="24.0" />
+              </font>
+            </Label>
+            <HBox alignment="CENTER" spacing="20.0">
+              <children>
+                <Label text="Login">
+                  <font>
+                    <Font size="16.0" />
+                  </font>
+                </Label>
+                <TextField fx:id="loginTextField" />
+              </children>
+              <VBox.margin>
+                <Insets />
+              </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+              <children>
+                <Label text="Hasło">
+                  <font>
+                    <Font size="16.0" />
+                  </font>
+                </Label>
+                <TextField fx:id="passwordTextField" />
+              </children>
+            </HBox>
+            <Button fx:id="loginButton" mnemonicParsing="false" styleClass="login-button" text="Wpuść mnie!" />
+          </children>
+        </VBox>
+      </items>
+    </SplitPane>
+    <Button fx:id="exitButton" layoutX="497.0" layoutY="29.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="exit-button" text="X" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Button>
+  </children>
+  <stylesheets>
+    <URL value="@../../../css/login.css" />
+    <URL value="@../../../css/global-colors.css" />
+  </stylesheets>
+</AnchorPane>
