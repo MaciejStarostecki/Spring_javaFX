@@ -90,7 +90,7 @@ public class LoginController implements Initializable {
         Parent appRoot = null;
         try {
             //metoda getClass() nie działa
-            appRoot = FXMLLoader.load(Main.class.getResource(APP_FXML));
+            appRoot = FXMLLoader.load(getClass().getResource(APP_FXML));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -16,4 +16,6 @@ module pl.strefakursow.spring_javafx {
     opens pl.strefakursow.spring_javafx.table to javafx.fxml;
     exports pl.strefakursow.spring_javafx.rest;
     opens pl.strefakursow.spring_javafx.rest to javafx.fxml;
+    exports pl.strefakursow.spring_javafx.handler;
+    opens pl.strefakursow.spring_javafx.handler to javafx.fxml;
 }

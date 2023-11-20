@@ -1,10 +1,10 @@
 package pl.strefakursow.spring_javafx.rest;
 
 import javafx.application.Platform;
-import org.springframework.http.ResponseEntity;
 import pl.strefakursow.spring_javafx.dto.OperatorAuthenticationResultDto;
 import pl.strefakursow.spring_javafx.dto.OperatorCredentialsDto;
 import org.springframework.web.client.RestTemplate;
+import pl.strefakursow.spring_javafx.handler.AuthenticationResultHandler;
 
 public class AuthenticatorImplementation implements Authenticator {
 

@@ -1,0 +1,10 @@
+.employee-button {
+    -fx-background-color: -fx-primary-background;
+    -fx-border-color: black;
+    -fx-background-radius: 0px;
+    -fx-font-size: 15px;
+}
+
+.employee-button:hover {
+    -fx-background-color: -fx-secondary-background;
+}
