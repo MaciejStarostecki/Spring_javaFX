@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/edit-employee.fxml" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenie widoku dla edycji pracownika&#10;* wysyłanie edytowanych danych do serwera">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/DeleteEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/DeletedEmployeeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/delete-employee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/app.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="CSS File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -141,7 +145,7 @@
       <updated>1700241038650</updated>
       <workItem from="1700241039735" duration="536000" />
       <workItem from="1700565577803" duration="35000" />
-      <workItem from="1700565620495" duration="998000" />
+      <workItem from="1700565620495" duration="5729000" />
     </task>
     <task id="LOCAL-00001" summary="Poprawka, która wynikała z niespójności plików">
       <option name="closed" value="true" />
@@ -183,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700562685135</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="* utworzenie widoku dla edycji pracownika&#10;* wysyłanie edytowanych danych do serwera">
+      <option name="closed" value="true" />
+      <created>1700568274386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700568274386</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +217,8 @@
     <MESSAGE value="Odbieranie danych z serwera i agregacja pracowników" />
     <MESSAGE value="* utworzenia nowego pracownika&#10;* nowe okna" />
     <MESSAGE value="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera" />
-    <option name="LAST_COMMIT_MESSAGE" value="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera" />
+    <MESSAGE value="* utworzenie widoku dla edycji pracownika&#10;* wysyłanie edytowanych danych do serwera" />
+    <option name="LAST_COMMIT_MESSAGE" value="* utworzenie widoku dla edycji pracownika&#10;* wysyłanie edytowanych danych do serwera" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
