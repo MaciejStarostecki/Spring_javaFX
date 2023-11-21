@@ -2,6 +2,7 @@ package pl.strefakursow.spring_javafx.table;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
+import pl.strefakursow.spring_javafx.dto.ItemDto;
 
 public class ItemTableModel {
 
@@ -15,6 +16,11 @@ public class ItemTableModel {
         this.name = new SimpleStringProperty(name);
         this.quantity = new SimpleDoubleProperty(quantity);
         this.quantityType = new SimpleStringProperty(quantityType);
+    }
+
+    public static ItemTableModel of(ItemDto itemDto) {
+        return new ItemTableModel(itemDto.getIdItem(), itemDto.getName(), itemDto.getQuantity(), itemDto.getQuantityType());
+
     }
 
     public Long getIdItem() {
