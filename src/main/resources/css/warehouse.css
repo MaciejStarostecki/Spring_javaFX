@@ -8,3 +8,8 @@
 .warehouse-button:hover {
     -fx-background-color: -fx-secondary-background;
 }
+
+.warehouse-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}

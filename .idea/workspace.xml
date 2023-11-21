@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenie nowego widoku dla magazynu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/ItemDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/WarehouseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/WarehouseModuleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/WarehouseRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/ItemTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/ItemTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/warehouse.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/warehouse.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/warehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/warehouse.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +155,7 @@
       <updated>1700241038650</updated>
       <workItem from="1700241039735" duration="536000" />
       <workItem from="1700565577803" duration="35000" />
-      <workItem from="1700565620495" duration="10552000" />
+      <workItem from="1700565620495" duration="15189000" />
     </task>
     <task id="LOCAL-00001" summary="Poprawka, która wynikała z niespójności plików">
       <option name="closed" value="true" />
@@ -226,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700576440006</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer">
+      <option name="closed" value="true" />
+      <created>1700578135938</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700578135938</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +263,8 @@
     <MESSAGE value="* utworzenie widoku dla usunięcia pracownika&#10;* wysyłanie żądania do serwera" />
     <MESSAGE value="* utworzenie menu bar, dodanie przycisków oraz ich obsługi" />
     <MESSAGE value="* utworzenie nowego widoku dla magazynu" />
-    <option name="LAST_COMMIT_MESSAGE" value="* utworzenie nowego widoku dla magazynu" />
+    <MESSAGE value="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer" />
+    <option name="LAST_COMMIT_MESSAGE" value="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

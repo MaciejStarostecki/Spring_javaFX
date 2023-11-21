@@ -3,19 +3,29 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
 <BorderPane fx:id="warehouseBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="menu-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.strefakursow.spring_javafx.controller.WarehouseController">
    <top>
-      <HBox prefHeight="55.0" prefWidth="1200.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="1200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="addButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="warehouse-button" text="Add" />
             <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="warehouse-button" text="View" />
             <Button fx:id="editButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="warehouse-button" text="Edit" />
             <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="warehouse-button" text="Delete" />
             <Button fx:id="refreshButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="warehouse-button" text="Refresh" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label text="Selected Warehouse">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="warehouseComboBox" prefWidth="250.0" />
          </children>
          <opaqueInsets>
             <Insets />
