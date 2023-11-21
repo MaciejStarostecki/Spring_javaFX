@@ -63,26 +63,52 @@ public class EmployeeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeEmployeeButton();
         initializeViewEmployeeButton();
+        initializeEditEmployeeButton();
         initializeRefreshButton();
         initializeTableView();
 
 
     }
 
+    private void initializeEditEmployeeButton() {
+        editButton.setOnAction(x -> {
+            EmployeeTableModel selectedEmployee = employeeTableView.getSelectionModel().getSelectedItem();
+            if (selectedEmployee != null) {
+                Stage waitingPopup = popupFactory.createWaitingPopup("Loading employee data...");
+                waitingPopup.show();
+                Stage editEmployeeStage = createEmployeeStage();
+                try {
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("edit-employee.fxml")));
+                    Scene scene = new Scene((BorderPane)loader.load(), 500, 400);
+                    editEmployeeStage.setScene(scene);
+                    EditEmployeeController controller = loader.<EditEmployeeController>getController();
+                    controller.loadEmployeeData(selectedEmployee.getIdEmployee(), () -> {
+                        waitingPopup.close();
+                        editEmployeeStage.show();
+                    });
+                } catch (IOException e) {
+                    throw new RuntimeException("Can't load fxml file edit-employee.fxml " + e);
+                }
+            }
+        });
+    }
+
+    private Stage createEmployeeStage() {
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        return stage;
+    }
+
     private void initializeViewEmployeeButton() {
         viewButton.setOnAction(x -> {
             EmployeeTableModel employee = employeeTableView.getSelectionModel().getSelectedItem();
-            if(employee == null) {
-                return;
-            }
-            else {
+            if(employee != null) {
                 Stage waitingPopup = popupFactory.createWaitingPopup("Loading employee data...");
                 waitingPopup.show();
-                Stage viewEmployeeStage = new Stage();
-                viewEmployeeStage.initStyle(StageStyle.UNDECORATED);
-                viewEmployeeStage.initModality(Modality.APPLICATION_MODAL);
-                FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("view-employee.fxml")));
+                Stage viewEmployeeStage = createEmployeeStage();
                 try {
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("view-employee.fxml")));
                     Scene scene = new Scene((BorderPane)loader.load(), 500, 400);
                     viewEmployeeStage .setScene(scene);
                     ViewEmployeeController controller = loader.<ViewEmployeeController>getController();
@@ -91,9 +117,8 @@ public class EmployeeController implements Initializable {
                         viewEmployeeStage.show();
                     });
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    throw new RuntimeException("Can't load fxml file view-employee.fxml " + e);
                 }
-
             }
         });
     }

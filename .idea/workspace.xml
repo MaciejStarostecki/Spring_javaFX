@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenia nowego pracownika&#10;* nowe okna">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/EmployeeLoadedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/view-employee.fxml" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/edit-employee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/EmployeeTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/EmployeeTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/employee.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +29,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MaciejStarostecki"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MaciejStarostecki&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -71,12 +66,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX/src/main/resources/pl/strefakursow/spring_javafx",
+    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -85,8 +81,8 @@
       <recent name="pl.strefakursow.spring_javafx.handler" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx\controller" />
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\image" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\css" />
     </key>
@@ -144,6 +140,8 @@
       <option name="presentableId" value="Default" />
       <updated>1700241038650</updated>
       <workItem from="1700241039735" duration="536000" />
+      <workItem from="1700565577803" duration="35000" />
+      <workItem from="1700565620495" duration="998000" />
     </task>
     <task id="LOCAL-00001" summary="Poprawka, która wynikała z niespójności plików">
       <option name="closed" value="true" />
@@ -177,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700485508491</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera">
+      <option name="closed" value="true" />
+      <created>1700562685135</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700562685135</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +204,11 @@
     <MESSAGE value="Poprawka, która wynikała z niespójności plików" />
     <MESSAGE value="Odbieranie danych z serwera i agregacja pracowników" />
     <MESSAGE value="* utworzenia nowego pracownika&#10;* nowe okna" />
-    <option name="LAST_COMMIT_MESSAGE" value="* utworzenia nowego pracownika&#10;* nowe okna" />
+    <MESSAGE value="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera" />
+    <option name="LAST_COMMIT_MESSAGE" value="* utworzenie widoku dla pojedynczego pracownika&#10;* odbieranie oraz przetwarzanie odebranych danych z serwera" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
