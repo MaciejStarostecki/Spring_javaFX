@@ -4,26 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="Odbieranie danych z serwera i agregacja pracowników">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AddEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/SavedEmployeeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/employee-crud.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/employee.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/add-employee.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/app.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/employee.fxml" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* utworzenia nowego pracownika&#10;* nowe okna">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/EmployeeLoadedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/view-employee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/factory/PopupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/factory/PopupFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticationResultHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/AuthenticationResultHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/Authenticator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticatorImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/AuthenticatorImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/app.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/EmployeeTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/table/EmployeeTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/employee.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +25,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,7 +71,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_JavaFX_backend",
+    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX/src/main/resources/pl/strefakursow/spring_javafx",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,6 +85,7 @@
       <recent name="pl.strefakursow.spring_javafx.handler" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx\controller" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\image" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\css" />
@@ -178,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700335600785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="* utworzenia nowego pracownika&#10;* nowe okna">
+      <option name="closed" value="true" />
+      <created>1700485508491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700485508491</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +197,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Poprawka, która wynikała z niespójności plików" />
     <MESSAGE value="Odbieranie danych z serwera i agregacja pracowników" />
-    <option name="LAST_COMMIT_MESSAGE" value="Odbieranie danych z serwera i agregacja pracowników" />
+    <MESSAGE value="* utworzenia nowego pracownika&#10;* nowe okna" />
+    <option name="LAST_COMMIT_MESSAGE" value="* utworzenia nowego pracownika&#10;* nowe okna" />
   </component>
 </project>

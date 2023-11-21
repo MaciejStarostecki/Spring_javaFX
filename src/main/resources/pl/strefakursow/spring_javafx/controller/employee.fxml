@@ -19,7 +19,7 @@
       <HBox prefHeight="55.0" prefWidth="1200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="addButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="Add" />
-            <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="Viev" />
+            <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="View" />
             <Button fx:id="editButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="Edit" />
             <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="Delete" />
             <Button fx:id="refreshButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="110.0" styleClass="employee-button" text="Refresh" />
