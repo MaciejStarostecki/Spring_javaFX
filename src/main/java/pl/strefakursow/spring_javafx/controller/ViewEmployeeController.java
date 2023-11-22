@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import pl.strefakursow.spring_javafx.dto.EmployeeDto;
-import pl.strefakursow.spring_javafx.handler.EmployeeLoadedHandler;
+import pl.strefakursow.spring_javafx.handler.ProcessFinishedHandler;
 import pl.strefakursow.spring_javafx.rest.EmployeeRestClient;
 
 import java.net.URL;
@@ -46,7 +46,7 @@ public class ViewEmployeeController implements Initializable {
         initializeOkButton();
     }
 
-    public void loadEmployeeData(Long idEmployee, EmployeeLoadedHandler handler) {
+    public void loadEmployeeData(Long idEmployee, ProcessFinishedHandler handler) {
         Thread thread = new Thread(() -> {
             EmployeeDto dto = employeeRestClient.getEmployee(idEmployee);
             Platform.runLater(() -> {
@@ -61,9 +61,8 @@ public class ViewEmployeeController implements Initializable {
     }
 
     private void initializeOkButton() {
-        okButton.setOnAction(x -> {
-            getStage().close();
-        });
+        okButton.setOnAction(x ->
+                getStage().close());
     }
 
 

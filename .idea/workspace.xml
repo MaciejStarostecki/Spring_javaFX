@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/WarehouseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/WarehouseModuleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/WarehouseRestClient.java" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* filtrowanie przedmiotów po magazynach">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AddItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/ItemSaveDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/QuantytyTypeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/ProcessFinishedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/QuantytyTypeRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/add-item.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/DeleteEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/DeleteEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/warehouse.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/warehouse.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/warehouse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/warehouse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/factory/PopupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/factory/PopupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/DeletedEmployeeHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/EmployeeLoadedHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/InfoPopupOkHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/handler/SavedEmployeeHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/EmployeeRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/employee-crud.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/crud.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/add-employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/add-employee.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/delete-employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/delete-employee.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/edit-employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/edit-employee.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/view-employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/view-employee.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +37,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -74,7 +90,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX/src/main/resources/css",
+    "last_opened_file_path": "I:/Java/IdeaProjects/StrefaKursów/Spring_javaFX/src/main/resources/pl/strefakursow/spring_javafx/controller",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -86,11 +102,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="pl.strefakursow.spring_javafx.dto" />
+      <recent name="pl.strefakursow.spring_javafx.rest" />
       <recent name="pl.strefakursow.spring_javafx.handler" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\css" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx\controller" />
+      <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\css" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\pl\strefakursow\spring_javafx" />
       <recent name="I:\Java\IdeaProjects\StrefaKursów\Spring_javaFX\src\main\resources\image" />
     </key>
@@ -155,7 +173,7 @@
       <updated>1700241038650</updated>
       <workItem from="1700241039735" duration="536000" />
       <workItem from="1700565577803" duration="35000" />
-      <workItem from="1700565620495" duration="15189000" />
+      <workItem from="1700565620495" duration="24093000" />
     </task>
     <task id="LOCAL-00001" summary="Poprawka, która wynikała z niespójności plików">
       <option name="closed" value="true" />
@@ -237,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700578135938</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="* filtrowanie przedmiotów po magazynach">
+      <option name="closed" value="true" />
+      <created>1700583739717</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700583739717</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +290,8 @@
     <MESSAGE value="* utworzenie menu bar, dodanie przycisków oraz ich obsługi" />
     <MESSAGE value="* utworzenie nowego widoku dla magazynu" />
     <MESSAGE value="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer" />
-    <option name="LAST_COMMIT_MESSAGE" value="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer" />
+    <MESSAGE value="* filtrowanie przedmiotów po magazynach" />
+    <option name="LAST_COMMIT_MESSAGE" value="* filtrowanie przedmiotów po magazynach" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

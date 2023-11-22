@@ -4,11 +4,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import pl.strefakursow.spring_javafx.dto.EmployeeDto;
-import pl.strefakursow.spring_javafx.handler.DeletedEmployeeHandler;
-import pl.strefakursow.spring_javafx.handler.SavedEmployeeHandler;
+import pl.strefakursow.spring_javafx.handler.ProcessFinishedHandler;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class EmployeeRestClient {
 
@@ -22,10 +22,10 @@ public class EmployeeRestClient {
 
     public List<EmployeeDto> getEmployees() {
         ResponseEntity<EmployeeDto[]> employees = restTemplate.getForEntity(EMPLOYEES_URL, EmployeeDto[].class);
-        return Arrays.asList(employees.getBody());
+        return Arrays.asList(Objects.requireNonNull(employees.getBody()));
     }
 
-    public void saveEmployee(EmployeeDto dto, SavedEmployeeHandler handler) {
+    public void saveEmployee(EmployeeDto dto, ProcessFinishedHandler handler) {
         ResponseEntity<EmployeeDto> responseEntity = restTemplate.postForEntity(EMPLOYEES_URL, dto, EmployeeDto.class);
 
         if(HttpStatus.OK.equals(responseEntity.getStatusCode())) {
@@ -51,7 +51,7 @@ public class EmployeeRestClient {
         }
     }
 
-    public void deleteEmployee(Long idEmployee, DeletedEmployeeHandler handler) {
+    public void deleteEmployee(Long idEmployee, ProcessFinishedHandler handler) {
         restTemplate.delete(EMPLOYEES_URL + "/" + idEmployee);
         handler.handle();
     }

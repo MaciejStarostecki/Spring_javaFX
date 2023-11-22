@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import pl.strefakursow.spring_javafx.dto.EmployeeDto;
 import pl.strefakursow.spring_javafx.factory.PopupFactory;
-import pl.strefakursow.spring_javafx.handler.EmployeeLoadedHandler;
+import pl.strefakursow.spring_javafx.handler.ProcessFinishedHandler;
 import pl.strefakursow.spring_javafx.rest.EmployeeRestClient;
 
 import java.net.URL;
@@ -57,15 +57,12 @@ public class EditEmployeeController implements Initializable {
             waitingPopup.show();
             Thread thread = new Thread(() -> {
                 EmployeeDto dto = createEmployeeDto();
-                employeeRestClient.saveEmployee(dto, () -> {
-                    Platform.runLater(() -> {
-                        waitingPopup.close();
-                        Stage infoPopup = popupFactory.createInfoPopup("Employee has been updated!", () -> {
-                            getStage().close();
-                        });
-                        infoPopup.show();
-                    });
-                });
+                employeeRestClient.saveEmployee(dto, () -> Platform.runLater(() -> {
+                    waitingPopup.close();
+                    Stage infoPopup = popupFactory.createInfoPopup("Employee has been updated!", () ->
+                            getStage().close());
+                    infoPopup.show();
+                }));
             });
             thread.start();
         });
@@ -83,7 +80,7 @@ public class EditEmployeeController implements Initializable {
         return dto;
     }
 
-    public void loadEmployeeData(Long idEmployee, EmployeeLoadedHandler handler) {
+    public void loadEmployeeData(Long idEmployee, ProcessFinishedHandler handler) {
         Thread thread = new Thread(() -> {
             EmployeeDto dto = employeeRestClient.getEmployee(idEmployee);
             Platform.runLater(() -> {
@@ -100,9 +97,8 @@ public class EditEmployeeController implements Initializable {
 
 
     private void initializeCancelButton() {
-        cancelButton.setOnAction(x -> {
-            getStage().close();
-        });
+        cancelButton.setOnAction(x ->
+                getStage().close());
     }
 
 

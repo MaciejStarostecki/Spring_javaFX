@@ -13,7 +13,7 @@
 
 <BorderPane fx:id="deleteEmployeeBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.strefakursow.spring_javafx.controller.DeleteEmployeeController">
    <stylesheets>
-      <URL value="@../../../../css/employee-crud.css" />
+      <URL value="@../../../../css/crud.css" />
       <URL value="@../../../../css/global-colors.css" />
    </stylesheets>
    <center>

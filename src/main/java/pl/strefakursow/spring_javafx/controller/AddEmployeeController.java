@@ -59,9 +59,8 @@ public class AddEmployeeController implements Initializable {
              waitingPopup.show();
              employeeRestClient.saveEmployee(dto, () -> {
                  waitingPopup.close();
-                 Stage infoPopup = popupFactory.createInfoPopup("Employee has been saved.", () -> {
-                     getStage().close();
-                 });
+                 Stage infoPopup = popupFactory.createInfoPopup("Employee has been saved.", () ->
+                         getStage().close());
                  infoPopup.show();
              });
 
@@ -80,10 +79,8 @@ public class AddEmployeeController implements Initializable {
     }
 
     private void initializeCancelButton() {
-        cancelButton.setOnAction(x -> {
-            getStage().close();
-
-        });
+        cancelButton.setOnAction(x ->
+                getStage().close());
     }
 
     private Stage getStage() {

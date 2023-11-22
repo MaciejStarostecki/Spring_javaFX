@@ -1,7 +1,6 @@
 package pl.strefakursow.spring_javafx.handler;
 
 @FunctionalInterface
-public interface InfoPopupOkHandler {
-
+public interface ProcessFinishedHandler {
     void handle();
 }

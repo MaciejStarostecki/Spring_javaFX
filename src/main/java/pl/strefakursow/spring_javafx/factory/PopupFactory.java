@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import pl.strefakursow.spring_javafx.handler.InfoPopupOkHandler;
+import pl.strefakursow.spring_javafx.handler.ProcessFinishedHandler;
 
 public class PopupFactory {
 
@@ -43,7 +43,7 @@ public class PopupFactory {
         return "-fx-background-color: #c7c7c7; -fx-border-color: black";
     }
 
-    public Stage createInfoPopup(String text, InfoPopupOkHandler handler) {
+    public Stage createInfoPopup(String text, ProcessFinishedHandler handler) {
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         VBox pane = new VBox();
@@ -55,12 +55,10 @@ public class PopupFactory {
 
         Button okButton = new Button("OK");
         okButton.setStyle(okButtonStyle());
-        okButton.setOnMouseEntered(x -> {
-            okButton.setStyle(okButtonHoverStyle());
-        });
-        okButton.setOnMouseExited(x -> {
-            okButton.setStyle(okButtonStyle());
-        });
+        okButton.setOnMouseEntered(x ->
+                okButton.setStyle(okButtonHoverStyle()));
+        okButton.setOnMouseExited(x ->
+                okButton.setStyle(okButtonStyle()));
         okButton.setOnAction(x -> {
             stage.close();
             handler.handle();
@@ -75,15 +73,17 @@ public class PopupFactory {
     }
 
     private String okButtonStyle() {
-        return "-fx-background-color: #c7c7c7;\n" +
-                "        -fx-border-color: black;\n" +
-                "        -fx-background-radius: 0px;";
+        return """
+                -fx-background-color: #c7c7c7;
+                -fx-border-color: black;
+                -fx-background-radius: 0px;""";
     }
 
     private String okButtonHoverStyle() {
-        return "-fx-background-color: #e1e1e1;" +
-                "        -fx-border-color: black;\n" +
-                "        -fx-background-radius: 0px;";
+        return """
+                -fx-background-color: #e1e1e1;
+                -fx-border-color: black;
+                -fx-background-radius: 0px;""";
     }
 
 }

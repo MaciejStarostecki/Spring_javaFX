@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -80,9 +79,9 @@ public class EmployeeController implements Initializable {
                 Stage deleteEmployeeStage = createEmployeeCrudStage();
                 try {
                     FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("delete-employee.fxml")));
-                    Scene scene = new Scene((BorderPane)loader.load(), 400, 210);
+                    Scene scene = new Scene(loader.load(), 400, 210);
                     deleteEmployeeStage.setScene(scene);
-                    DeleteEmployeeController controller = loader.<DeleteEmployeeController>getController();
+                    DeleteEmployeeController controller = loader.getController();
                     controller.loadEmployeeData(selectedEmployee);
                     waitingPopup.close();
                     deleteEmployeeStage.show();
@@ -102,9 +101,9 @@ public class EmployeeController implements Initializable {
                 Stage editEmployeeStage = createEmployeeCrudStage();
                 try {
                     FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("edit-employee.fxml")));
-                    Scene scene = new Scene((BorderPane)loader.load(), 500, 400);
+                    Scene scene = new Scene(loader.load(), 500, 400);
                     editEmployeeStage.setScene(scene);
-                    EditEmployeeController controller = loader.<EditEmployeeController>getController();
+                    EditEmployeeController controller = loader.getController();
                     controller.loadEmployeeData(selectedEmployee.getIdEmployee(), () -> {
                         waitingPopup.close();
                         editEmployeeStage.show();
@@ -132,9 +131,9 @@ public class EmployeeController implements Initializable {
                 Stage viewEmployeeStage = createEmployeeCrudStage();
                 try {
                     FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("view-employee.fxml")));
-                    Scene scene = new Scene((BorderPane)loader.load(), 500, 400);
+                    Scene scene = new Scene(loader.load(), 500, 400);
                     viewEmployeeStage .setScene(scene);
-                    ViewEmployeeController controller = loader.<ViewEmployeeController>getController();
+                    ViewEmployeeController controller = loader.getController();
                     controller.loadEmployeeData(employee.getIdEmployee(), () -> {
                         waitingPopup.close();
                         viewEmployeeStage.show();

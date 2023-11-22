@@ -92,7 +92,7 @@
       </VBox>
    </center>
    <stylesheets>
-      <URL value="@../../../../css/employee-crud.css" />
+      <URL value="@../../../../css/crud.css" />
       <URL value="@../../../../css/global-colors.css" />
    </stylesheets>
 </BorderPane>

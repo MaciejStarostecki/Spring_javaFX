@@ -18,11 +18,8 @@ public class AuthenticatorImplementation implements Authenticator {
 
     @Override
     public void authenticate(OperatorCredentialsDto operatorCredentialsDto, AuthenticationResultHandler authenticationResultHandler) {
-        Runnable authenticationTask = () -> {
-            Platform.runLater(() -> {
-                processAuthentication(operatorCredentialsDto, authenticationResultHandler);
-            });
-        };
+        Runnable authenticationTask = () -> Platform.runLater(() ->
+                processAuthentication(operatorCredentialsDto, authenticationResultHandler));
         Thread authenticationThread = new Thread(authenticationTask);
         authenticationThread.setDaemon(true);
         authenticationThread.start();

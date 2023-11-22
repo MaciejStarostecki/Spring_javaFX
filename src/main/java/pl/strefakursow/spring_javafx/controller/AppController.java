@@ -53,9 +53,8 @@ public class AppController implements Initializable {
         warehouseModuleMenuItem.setOnAction(x -> loadModuleView(WAREHOUSE_MODULE_VIEW));
         employeeModuleMenuItem.setOnAction(x -> loadModuleView(EMPLOYEE_MODULE_VIEW));
         logoutMenuItem.setOnAction(x -> logout());
-        exitMenuItem.setOnAction(x -> {
-            getStage().close();
-        });
+        exitMenuItem.setOnAction(x ->
+                getStage().close());
     }
 
     private void logout() {

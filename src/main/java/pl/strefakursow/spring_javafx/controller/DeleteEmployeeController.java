@@ -7,9 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import pl.strefakursow.spring_javafx.dto.EmployeeDto;
 import pl.strefakursow.spring_javafx.factory.PopupFactory;
-import pl.strefakursow.spring_javafx.handler.EmployeeLoadedHandler;
 import pl.strefakursow.spring_javafx.rest.EmployeeRestClient;
 import pl.strefakursow.spring_javafx.table.EmployeeTableModel;
 
@@ -54,25 +52,19 @@ public class DeleteEmployeeController implements Initializable {
         deleteButton.setOnAction(x -> {
             Stage waitingPopup = popupFactory.createWaitingPopup("Deleting employee...");
             waitingPopup.show();
-            Thread thread = new Thread(() -> {
-                employeeRestClient.deleteEmployee(idEmployee, () -> {
-                    Platform.runLater(() -> {
-                        waitingPopup.close();
-                        Stage infoPopup = popupFactory.createInfoPopup("Employee has been deleted.", () -> {
-                            getStage().close();
-                        });
-                        infoPopup.show();
-                    });
-                });
-            });
+            Thread thread = new Thread(() -> employeeRestClient.deleteEmployee(idEmployee, () -> Platform.runLater(() -> {
+                waitingPopup.close();
+                Stage infoPopup = popupFactory.createInfoPopup("Employee has been deleted.", () ->
+                        getStage().close());
+                infoPopup.show();
+            })));
             thread.start();
         });
     }
 
     private void initializeCancelButton() {
-        cancelButton.setOnAction(x -> {
-            getStage().close();
-        });
+        cancelButton.setOnAction(x ->
+                getStage().close());
     }
 
 

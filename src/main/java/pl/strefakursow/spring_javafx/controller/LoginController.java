@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import pl.strefakursow.spring_javafx.Main;
 import pl.strefakursow.spring_javafx.dto.OperatorCredentialsDto;
 import pl.strefakursow.spring_javafx.factory.PopupFactory;
 import pl.strefakursow.spring_javafx.rest.Authenticator;
@@ -18,14 +17,15 @@ import pl.strefakursow.spring_javafx.rest.AuthenticatorImplementation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
     public static final String APP_FXML = "app.fxml";
     public static final String APP_TITTLE = "MS_System";
-    private PopupFactory popupFactory;
-    private Authenticator authenticator;
+    private final PopupFactory popupFactory;
+    private final Authenticator authenticator;
 
     @FXML
     private Button exitButton;
@@ -55,9 +55,8 @@ public class LoginController implements Initializable {
     }
 
     private void initializeLoginButton() {
-        loginButton.setOnAction(actionEvent -> {
-            performAuthentication();
-        });
+        loginButton.setOnAction(actionEvent ->
+                performAuthentication());
     }
 
     private void performAuthentication() {
@@ -71,7 +70,7 @@ public class LoginController implements Initializable {
         dto.setPassword(password);
 
         authenticator.authenticate(dto, authenticationResult -> {
-            Platform.runLater(() -> waitingPopup.close());
+            Platform.runLater(waitingPopup::close);
             if(authenticationResult.isAuthenticated()) {
                 openAppAndCloseLoginStage();
             }
@@ -87,10 +86,10 @@ public class LoginController implements Initializable {
 
     private void openAppAndCloseLoginStage() {
         Stage appStage = new Stage();
-        Parent appRoot = null;
+        Parent appRoot;
         try {
             //metoda getClass() nie działa
-            appRoot = FXMLLoader.load(getClass().getResource(APP_FXML));
+            appRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(APP_FXML)));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -103,9 +102,8 @@ public class LoginController implements Initializable {
     }
 
     private void initializeExitButton() {
-        exitButton.setOnAction(actionEvent -> {
-            getStage().close();
-        });
+        exitButton.setOnAction(actionEvent ->
+                getStage().close());
     }
 
     private Stage getStage() {
