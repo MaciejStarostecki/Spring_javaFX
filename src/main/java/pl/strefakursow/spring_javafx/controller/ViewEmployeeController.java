@@ -40,10 +40,14 @@ public class ViewEmployeeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializeControls();
+        initializeOkButton();
+    }
+
+    private void initializeControls() {
         firstNameTextField.setEditable(false);
         lastNameTextField.setEditable(false);
         salaryTextField.setEditable(false);
-        initializeOkButton();
     }
 
     public void loadEmployeeData(Long idEmployee, ProcessFinishedHandler handler) {

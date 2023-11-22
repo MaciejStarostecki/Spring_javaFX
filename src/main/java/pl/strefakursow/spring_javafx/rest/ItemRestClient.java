@@ -3,6 +3,7 @@ package pl.strefakursow.spring_javafx.rest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import pl.strefakursow.spring_javafx.dto.EmployeeDto;
 import pl.strefakursow.spring_javafx.dto.ItemDto;
 import pl.strefakursow.spring_javafx.dto.ItemSaveDto;
 import pl.strefakursow.spring_javafx.handler.ProcessFinishedHandler;
@@ -33,5 +34,17 @@ public class ItemRestClient {
         }
         else
             throw new RuntimeException("Can't same dto: " + dto);
+    }
+
+    public ItemDto getItem(Long idItem) {
+        String url = ITEMS_URL + "/" + idItem;
+        ResponseEntity<ItemDto> responseEntity = restTemplate.getForEntity(url, ItemDto.class);
+        if(HttpStatus.OK.equals(responseEntity.getStatusCode())) {
+            return responseEntity.getBody();
+        }
+        else {
+            //TODO implement
+            throw new RuntimeException("Can't load item.");
+        }
     }
 }

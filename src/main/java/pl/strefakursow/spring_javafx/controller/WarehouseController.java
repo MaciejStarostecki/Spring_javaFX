@@ -18,13 +18,16 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import pl.strefakursow.spring_javafx.dto.WarehouseDto;
 import pl.strefakursow.spring_javafx.dto.WarehouseModuleDto;
+import pl.strefakursow.spring_javafx.factory.PopupFactory;
 import pl.strefakursow.spring_javafx.rest.ItemRestClient;
 import pl.strefakursow.spring_javafx.rest.WarehouseRestClient;
+import pl.strefakursow.spring_javafx.table.EmployeeTableModel;
 import pl.strefakursow.spring_javafx.table.ItemTableModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class WarehouseController implements Initializable {
@@ -58,11 +61,13 @@ public class WarehouseController implements Initializable {
     private final WarehouseRestClient warehouseRestClient;
 
     private final ObservableList<ItemTableModel> data;
+    private final PopupFactory popupFactory;
 
     public WarehouseController() {
         itemRestClient = new ItemRestClient();
         this.data = FXCollections.observableArrayList();
         warehouseRestClient = new WarehouseRestClient();
+        popupFactory = new PopupFactory();
     }
 
 
@@ -71,11 +76,37 @@ public class WarehouseController implements Initializable {
         initializeTableView();
         initializeComboBox();
         initializeAddItemButton();
+        initializeViewItemButton();
 
+    }
+
+    private void initializeViewItemButton() {
+        viewButton.setOnAction(x -> {
+            ItemTableModel item = warehouseTableView.getSelectionModel().getSelectedItem();
+            if(item != null) {
+                Stage waitingPopup = popupFactory.createWaitingPopup("Loading item data...");
+                waitingPopup.show();
+                Stage viewItemStage = createItemCrudStage();
+                try {
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("view-item.fxml")));
+                    Scene scene = new Scene(loader.load(), 500, 400);
+                    viewItemStage.setScene(scene);
+                    ViewItemController controller = loader.getController();
+                    controller.loadItemData(item.getIdItem(), () -> {
+                        waitingPopup.close();
+                        viewItemStage.show();
+                    });
+                } catch (IOException e) {
+                    throw new RuntimeException("Can't load fxml file view-item.fxml " + e);
+                }
+            }
+        });
     }
 
     private void initializeAddItemButton() {
         addButton.setOnAction(x -> {
+            Stage waitingPopup = popupFactory.createWaitingPopup("Loading item data...");
+            waitingPopup.show();
             try {
                 Stage stage = createItemCrudStage();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("add-item.fxml"));
