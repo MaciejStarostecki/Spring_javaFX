@@ -69,14 +69,11 @@ public class EditEmployeeController implements Initializable {
     }
 
     private EmployeeDto createEmployeeDto() {
-        String firstname = firstNameTextField.getText();
-        String lastName = lastNameTextField.getText();
-        String salary = salaryTextField.getText();
         EmployeeDto dto = new EmployeeDto();
         dto.setIdEmployee(idEmployee);
-        dto.setFirstName(firstname);
-        dto.setLastName(lastName);
-        dto.setSalary(salary);
+        dto.setFirstName(firstNameTextField.getText());
+        dto.setLastName(lastNameTextField.getText());
+        dto.setSalary(salaryTextField.getText());
         return dto;
     }
 
@@ -92,7 +89,6 @@ public class EditEmployeeController implements Initializable {
             });
         });
         thread.start();
-
     }
 
 

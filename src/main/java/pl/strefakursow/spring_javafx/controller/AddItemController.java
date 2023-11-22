@@ -41,7 +41,6 @@ public class AddItemController implements Initializable {
     private WarehouseDto warehouseDto;
     private final ItemRestClient itemRestClient;
     private final QuantytyTypeRestClient quantytyTypeRestClient;
-
     private final PopupFactory popupFactory;
 
     public AddItemController() {

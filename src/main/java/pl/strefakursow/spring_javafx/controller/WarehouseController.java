@@ -77,7 +77,32 @@ public class WarehouseController implements Initializable {
         initializeComboBox();
         initializeAddItemButton();
         initializeViewItemButton();
+        initializeEditItemButton();
 
+    }
+
+    private void initializeEditItemButton() {
+        editButton.setOnAction(x -> {
+            ItemTableModel selectedItem = warehouseTableView.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                Stage waitingPopup = popupFactory.createWaitingPopup("Loading item data...");
+                waitingPopup.show();
+                Stage editItemStage = createItemCrudStage();
+                try {
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("edit-item.fxml")));
+                    Scene scene = new Scene(loader.load(), 500, 400);
+                    editItemStage.setScene(scene);
+                    EditItemController controller = loader.getController();
+                    controller.loadItemData(selectedItem.getIdItem(), () -> {
+                        waitingPopup.close();
+                        editItemStage.show();
+                    });
+                } catch (IOException e) {
+                    throw new RuntimeException("Can't load fxml file edit-item.fxml " + e);
+                }
+
+            }
+        });
     }
 
     private void initializeViewItemButton() {

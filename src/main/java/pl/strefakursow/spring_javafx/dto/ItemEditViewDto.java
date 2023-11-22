@@ -2,13 +2,15 @@ package pl.strefakursow.spring_javafx.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class ItemSaveDto {
+public class ItemEditViewDto {
 
     private Long idItem;
     private String name;
     private Double quantity;
     private Long idQuantityType;
-    private Long idWarehouse;
+    private List<QuantityTypeDto> quantityTypeDtoList;
 
 }

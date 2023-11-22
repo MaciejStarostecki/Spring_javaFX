@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* dodawanie przedmiotów do magazynu, w którym się znajdujemy&#10;* poprawka Warningów">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/view-item.fxml" afterDir="false" />
+    <list default="true" id="858cc777-db4b-4cfe-b234-1160252b9bfd" name="Changes" comment="* sprawdzanie szczegółów przedmiotów">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/ItemEditViewDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/strefakursow/spring_javafx/controller/edit-item.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/ViewEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AddItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/AddItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/WarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/ItemSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/dto/ItemSaveDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +159,7 @@
       <updated>1700241038650</updated>
       <workItem from="1700241039735" duration="536000" />
       <workItem from="1700565577803" duration="35000" />
-      <workItem from="1700565620495" duration="27120000" />
+      <workItem from="1700565620495" duration="36138000" />
     </task>
     <task id="LOCAL-00001" summary="Poprawka, która wynikała z niespójności plików">
       <option name="closed" value="true" />
@@ -254,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700649554492</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="* sprawdzanie szczegółów przedmiotów">
+      <option name="closed" value="true" />
+      <created>1700651654804</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700651654804</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +294,24 @@
     <MESSAGE value="* dla widoku magazynu utworzenie kontrolerów, modelu oraz REST do wyświetlenia listy przedmiotów wysłanych przez serwer" />
     <MESSAGE value="* filtrowanie przedmiotów po magazynach" />
     <MESSAGE value="* dodawanie przedmiotów do magazynu, w którym się znajdujemy&#10;* poprawka Warningów" />
-    <option name="LAST_COMMIT_MESSAGE" value="* dodawanie przedmiotów do magazynu, w którym się znajdujemy&#10;* poprawka Warningów" />
+    <MESSAGE value="* sprawdzanie szczegółów przedmiotów" />
+    <option name="LAST_COMMIT_MESSAGE" value="* sprawdzanie szczegółów przedmiotów" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/controller/EditItemController.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/strefakursow/spring_javafx/rest/ItemRestClient.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
