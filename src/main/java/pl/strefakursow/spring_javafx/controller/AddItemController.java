@@ -57,15 +57,17 @@ public class AddItemController implements Initializable {
 
     private void initializeSaveButton() {
         saveButton.setOnAction(x -> {
-            ItemSaveDto dto = createItemSaveDto();
             Stage waitingPopup = popupFactory.createWaitingPopup("Adding item to the server...");
             waitingPopup.show();
-            Thread thread = new Thread(() -> itemRestClient.saveItem(dto, () -> Platform.runLater(() -> {
-                waitingPopup.close();
-                Stage infoPopup = popupFactory.createInfoPopup("Item has been saved.", () ->
-                        getStage().close());
-                infoPopup.show();
-            })));
+            Thread thread = new Thread(() -> {
+                ItemSaveDto dto = createItemSaveDto();
+                itemRestClient.saveItem(dto, () -> Platform.runLater(() -> {
+                    waitingPopup.close();
+                    Stage infoPopup = popupFactory.createInfoPopup("Item has been saved.", () ->
+                            getStage().close());
+                    infoPopup.show();
+                }));
+            });
             thread.start();
         });
     }
