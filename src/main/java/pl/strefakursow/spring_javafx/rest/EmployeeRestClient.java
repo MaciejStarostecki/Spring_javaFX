@@ -32,7 +32,6 @@ public class EmployeeRestClient {
             handler.handle();
         }
         else {
-            //TODO implement
             throw new RuntimeException("Can't save employee.");
         }
 

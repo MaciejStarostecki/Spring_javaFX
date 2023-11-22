@@ -78,7 +78,29 @@ public class WarehouseController implements Initializable {
         initializeAddItemButton();
         initializeViewItemButton();
         initializeEditItemButton();
+        initializeDeleteItemButton();
+    }
 
+    private void initializeDeleteItemButton() {
+        deleteButton.setOnAction(x -> {
+            ItemTableModel selectedItem = warehouseTableView.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                Stage waitingPopup = popupFactory.createWaitingPopup("Loading item data...");
+                waitingPopup.show();
+                Stage deleteItemStage = createItemCrudStage();
+                try {
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("delete-item.fxml")));
+                    Scene scene = new Scene(loader.load(), 400, 210);
+                    deleteItemStage.setScene(scene);
+                    DeleteItemController controller = loader.getController();
+                    controller.loadItemData(selectedItem);
+                    waitingPopup.close();
+                    deleteItemStage.show();
+                } catch (IOException e) {
+                    throw new RuntimeException("Can't load fxml file delete-item.fxml " + e);
+                }
+            }
+        });
     }
 
     private void initializeEditItemButton() {

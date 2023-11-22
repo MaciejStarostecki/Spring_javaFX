@@ -57,7 +57,6 @@ public class EditItemController implements Initializable {
     }
 
     private void initializeEditButton() {
-
         editButton.setOnAction(x -> {
             Stage waitingPopup = popupFactory.createWaitingPopup("Connecting to the server...");
             waitingPopup.show();
@@ -81,8 +80,6 @@ public class EditItemController implements Initializable {
         dto.setQuantity(Double.valueOf(quantityTextField.getText()));
         dto.setIdQuantityType(quantityTypeComboBox.getSelectionModel().getSelectedItem().getIdQuantityType());
         dto.setIdItem(idItem);
-        itemRestClient.saveItem(dto, () ->
-                getStage().close());
         return dto;
     }
 
@@ -94,11 +91,8 @@ public class EditItemController implements Initializable {
                 nameTextField.setText(dto.getName());
                 quantityTextField.setText(dto.getQuantity().toString());
                 quantityTypeComboBox.setItems(FXCollections.observableArrayList(dto.getQuantityTypeDtoList()));
-                System.out.println(dto.getQuantityTypeDtoList());
                 for (int i = 0; i < quantityTypeComboBox.getItems().size(); i++) {
                     QuantityTypeDto quantityTypeDto = quantityTypeComboBox.getItems().get(i);
-                    System.out.println(quantityTypeDto);
-                    System.out.println(quantityTypeDto.getIdQuantityType());
                     if (quantityTypeDto.getIdQuantityType().equals(dto.getIdQuantityType())) {
                         quantityTypeComboBox.getSelectionModel().select(i);
                     }

@@ -35,7 +35,7 @@ public class ItemRestClient {
             processFinishedHandler.handle();
         }
         else
-            throw new RuntimeException("Can't same dto: " + dto);
+            throw new RuntimeException("Can't save dto: " + dto);
     }
 
     public ItemDto getItem(Long idItem) {
@@ -53,5 +53,10 @@ public class ItemRestClient {
     public ItemEditViewDto getEditItemData(Long idItem) {
         ResponseEntity<ItemEditViewDto> responseEntity = restTemplate.getForEntity(ITEM_EDIT_DATA_URL + "/" + idItem, ItemEditViewDto.class);
         return responseEntity.getBody();
+    }
+
+    public void deleteItem(Long idItemToDelete, ProcessFinishedHandler handler) {
+        restTemplate.delete(ITEMS_URL + "/" + idItemToDelete);
+        handler.handle();
     }
 }
